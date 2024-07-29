@@ -1,0 +1,51 @@
+nav {
+    background-color:gray;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color:white;
+    text-decoration: none;
+    padding: 26px 30px;
+    font-size: 30px;
+    float:right;
+}
+
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+.box {
+    width:500px;
+    height:500px;
+    border:5px solid black;
+    padding-top:40px;
+    background-color:lavender;
+    font-size: 20px;
+    font-family:cursive;
+    
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color:gray;
+    font-size:30px;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: flex-start;
+}
+  
+  .flex-container > div {
+    margin:40px;
+    
+  }
