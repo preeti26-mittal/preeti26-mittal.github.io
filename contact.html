@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        body {
+            background-color: lightcyan;
+            font-family: Arial, sans-serif; 
+        }
+        form {
+            max-width: 400px; 
+            margin: 20px auto; 
+            padding: 10px;
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        form label {
+            font-weight: bold; 
+        }
+        form input[type="text"], form textarea {
+            width: 50%; 
+            padding: 5px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+        }
+        form textarea {
+            resize: vertical; 
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none; 
+            border-radius: 4px;
+            cursor: pointer; 
+            float: center; 
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049; 
+        }
+        footer {
+            text-align: center; 
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <link rel ="stylesheet" href ="abc.css">
+    <nav>
+    <div>
+        <img src ="Untitled_design__1_-removebg-preview.png" width="99" height="83" alt="aadi">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="home.html">Home</a></li>
+    </div>
+    </nav>
+
+    <center>
+        <div class="box">
+            <form onsubmit="return download(this['name'].value, this['e-mail'].value, this['number'].value, this['message'].value)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="e-mail">E-mail:</label>
+                <input type="text" id="e-mail" name="e-mail" required>
+                <br><br>
+                <label for="number">Number:</label>
+                <input type="text" id="number" name="number" required>
+                <br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="7" cols="25" required></textarea>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </center>
+
+    <footer>
+        <a href="mailto:preetimittal26@gmail.com">preetimittal26@gmail.com</a>
+    </footer>
+
+    <script>
+        function download(name, email, number, message) {
+            var filename = 'form_data.txt';
+            var content = 'Name: ' + name + '\n'
+                        + 'E-mail: ' + email + '\n'
+                        + 'Number: ' + number + '\n'
+                        + 'Message: ' + message + '\n';
+
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            pom.setAttribute('download', filename);
+            pom.style.display = 'none';
+            document.body.appendChild(pom);
+            pom.click();
+            document.body.removeChild(pom);
+
+            return false; 
+        }
+    </script>
+</body>
+</html>
